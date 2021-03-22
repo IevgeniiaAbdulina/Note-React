@@ -1,4 +1,5 @@
 import Note from "./Note"
+import NotesFilter from "./NotesFilter";
 
 const NoteList = () => {
     return ( 
@@ -6,12 +7,6 @@ const NoteList = () => {
             <Note />
             <Note />
             <Note />
-
-            <div>
-                <div className="note-left">Note left</div>
-                <div className="clear-completed">Clear completed</div>
-            </div>
-            <div className="filters">All Active Completed</div>
         </div>
      );
 }

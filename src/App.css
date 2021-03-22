@@ -1,42 +1,57 @@
+/* HIGHLIGHT ELEMENTS */
+/* ---------------------- */
+.header {
+    border: solid red;
+}
+.new-note {
+    border: solid green;
+}
+.note-list {
+    border: solid blue;
+}
+.notes-details {
+    border: dotted purple;
+}
+.notes-filter {
+    border: dotted green;
+}
+
+.reorder-notes {
+    border: dotted yellow;
+}
+.attribution {
+    border: dotted yellowgreen;
+}
+/* ---------------------- */
+
+
+/* HEADER SECTION */
+/* ---------------------- */
 .header {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    padding: 24px 0;
+    margin: 24px 0;
+    padding: 16px 0;
     color: #3720A9;
-
-    border: solid red;
 }
+/* ---------------------- */
 
-/* //////////////////////////////////////// */
-/* ELEMENTS */
+
+/* NEW NOTE SECTION */
+/* ---------------------- */
 .new-note {
-    border: solid yellowgreen;
+    margin: 16px 0;
 }
-
-.note-list {
-    border: solid blue;
-}
-
-.note-left{
-    border: dotted hotpink;
-}
-
-.clear-completed{
-    border: dotted purple;
-}
-
-.filters {
-    border: dotted green;
-}
-/* //////////////////////////////////////// */
 
 input {
-    padding: 8px;
-    min-width: 450px;
-    margin: 24px 0;
+    padding: 16px;
+    min-width: 320px;
 }
 
+
+/* NOTE LIST SECTION */
+/* ---------------------- */
 .note {
     display: flex;
     margin: 16px 0;
@@ -45,3 +60,51 @@ input {
 .note div {
     margin-right: 24px;
 }
+
+
+/* NOTE DETAILS SECTION */
+/* ---------------------- */
+.notes-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+}
+/* ---------------------- */
+ 
+
+/* NOTES FILTER SECTION */
+/* ---------------------- */
+.notes-filter {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0;
+    padding: 16px 0;
+}
+
+.notes-filter div {
+    margin: 0 8px;
+}
+/* ---------------------- */
+
+
+/* REORDER NOTES SECTION */
+/* ---------------------- */
+.reorder-notes {
+    text-align: center;
+    margin: 16px 0;
+    padding: 16px;
+}
+/* ---------------------- */
+
+
+/* ATTRIBUTION SECTION */
+/* ---------------------- */
+.attribution { 
+    margin-top: 120px;
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+/* ---------------------- */

@@ -1,7 +1,7 @@
 const ReorderNotes = () => {
     return ( 
         <div className="reorder-notes">
-            Reorder Notes
+            Drag and drop to reorder list
         </div>
      );
 }

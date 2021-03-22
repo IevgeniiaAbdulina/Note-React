@@ -44,6 +44,9 @@ Users should be able to:
 
 ### Built with
 
+- CSS custom properties
+- Flexbox
+- Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 <!-- - [Next.js](https://nextjs.org/) - React framework -->
 <!-- - [Styled Components](https://styled-components.com/) - For styles -->
@@ -56,6 +59,17 @@ const proudOfThisFunc = () => {
 }
 ``` -->
 
+Using CSS variables:
+```css
+:root {
+  --dark-grayish-blue: hsl(236, 9%, 61%);
+}
+
+.wrapper {
+  background-color: var(--dark-grayish-blue)
+}
+```
+
 ### Continued development
 
 <!-- Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect. -->
@@ -66,7 +80,7 @@ const proudOfThisFunc = () => {
 
 ## Author
 
-- Website - [Ievgeniia Abdulina](https://codepen.io/ievgeniiaabdulina/pen/VweMyLM)
+- Website - [Ievgeniia Abdulina](https://codepen.io/ievgeniiaabdulina/full/VweMyLM)
 - Frontend Mentor - [@IevgeniiaAbdulina](https://www.frontendmentor.io/profile/IevgeniiaAbdulina)
 
 
