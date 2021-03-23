@@ -88,3 +88,9 @@ body {
         display: none;
     }
 }
+
+@media (width >= 720px) {
+    .layout-desktop {
+        margin: 0 20% 0 auto;
+    }
+}
