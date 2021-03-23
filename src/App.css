@@ -69,6 +69,15 @@ input {
     justify-content: space-between;
     padding: 16px 0;
 }
+
+.layout-desktop {
+    display: flex;
+    justify-content: center;
+}
+
+.layout-desktop div {
+    margin: 0 8px;
+}
 /* ---------------------- */
  
 

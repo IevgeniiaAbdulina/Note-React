@@ -44,11 +44,27 @@
 }
 
 body {
-    max-width: 320px;
+    max-width: 720px;
     min-height: 100vh;
     margin: 0 auto;
     font-family: var(--font-family);
     font-size: var(--font-size);
     font-weight: var(--font-weight-regular);
     background-color: var(--very-light-grayish-blue);
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    body {
+        max-width: 320px;
+    }
+    
+    div.layout-desktop {
+        display: none;
+    }
+}
+
+@media (width > 480px) {
+    div.notes-filter {
+        display: none;
+    }
 }
