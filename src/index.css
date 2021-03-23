@@ -51,6 +51,14 @@ body {
     font-size: var(--font-size);
     font-weight: var(--font-weight-regular);
     background-color: var(--very-light-grayish-blue);
+
+    /* DARK THEME */
+    background: 
+        var(--very-dark-blue ) 
+        url(./img/bg-mobile-dark.jpg) 
+        no-repeat 0% 0% / auto auto;
+
+    /* LIGHT THEME */
 }
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
@@ -60,6 +68,18 @@ body {
     
     div.layout-desktop {
         display: none;
+    }
+}
+
+@media (width > 375px) {
+    body {
+        /* DARK THEME */
+        background: 
+            var(--very-dark-blue ) 
+            url(./img/bg-desktop-dark.jpg) 
+            no-repeat 0% 0% / auto auto;
+
+        /* LIGHT THEME */
     }
 }
 
