@@ -13,7 +13,7 @@ function App() {
       <Header />
       <NewNote />
       <NoteList />
-      <NotesDetails />
+      {/* <NotesDetails /> */}
       <NotesFilter />
       <ReorderNotes />
       <Attribution />

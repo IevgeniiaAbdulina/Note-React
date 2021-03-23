@@ -1,23 +1,3 @@
-/* HIGHLIGHT ELEMENTS */
-/* ---------------------- */
-.header {
-    border: solid red;
-}
-.new-note {
-    border: solid green;
-}
-.note-list {
-    border: solid blue;
-}
-.notes-details {
-    border: dotted purple;
-}
-.notes-filter {
-    border: dotted green;
-}
-/* ---------------------- */
-
-
 /* HEADER SECTION */
 /* ---------------------- */
 .header {
@@ -26,7 +6,19 @@
     justify-content: space-between;
     margin: 24px 0;
     padding: 16px 0;
-    color: #3720A9;
+
+    /* DARK THEME */
+    color: var(--very-light-gray);
+}
+
+.color-theme::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    background-image: url(./img/icon-sun.svg);
+    background-size: cover;
 }
 /* ---------------------- */
 
@@ -37,22 +29,151 @@
     margin: 16px 0;
 }
 
+
 input {
-    padding: 16px;
-    min-width: 320px;
+    padding: 16px 60px;
+    width: 100%;
+    border: none;
+    font-family: var(--font-family);
+
+    /* DARK THEME */
+    color: var(--dark-grayish-blue);
 }
+
+input:focus {
+    outline: none;
+}
+
+.new-note::before{
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 32px;
+    left: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--very-dark-grayish-blue-border);
+    background: var(--very-dark-desaturated-blue);
+}
+/* ---------------------- */
+
+/* MARK NOTES as COMPLETED and UNCOMPLETED */
+/* ---------------------- */
+
+.mark {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
+} 
+
+
+.uncompleted:hover::before{
+    content: '';
+    width: 125%;
+    height: 125%;
+    display: inline-block;
+    position: relative;
+    top: -10%;
+    left: -12%;
+    background-image: var(--primary-check-background);
+    border-radius: 50%;
+}
+
+.uncompleted:hover::after{
+    content: '';
+    width: 110%;
+    height: 110%;
+    display: inline-block;
+    position: relative;
+    top: -148%;
+    left: -4%;
+    background-color: var(--very-dark-desaturated-blue);
+    border-radius: 50%;
+}
+
+.uncompleted {
+    /* DARK THEME */
+    border: 2px solid var(--very-dark-grayish-blue-border);
+}
+
+.completed {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
+    background: var(--primary-check-background);
+}
+
+.completed::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 8px;
+    height: 8px;
+    position: relative;
+    left: 6px;
+    top: 2px;
+    background-image: url(./img/icon-check.svg);
+    background-size: cover;
+}
+/* ---------------------- */
+
+/* DELETE BUTTON */
+/* ---------------------- */
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+
+/* .delete-note {
+    width: 16px;
+    height: 16px;
+    background-image: url(./img/icon-cross.svg);
+    background-size: cover;
+} */
+
+.delete-note {
+    display: none;
+}
+
+.note:hover + .delete-note {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url(./img/icon-cross.svg);
+    background-size: cover;
+}
+/* ---------------------- */
 
 
 /* NOTE LIST SECTION */
 /* ---------------------- */
 .note {
     display: flex;
-    margin: 16px 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    font-size: 14px;
+
+    /* DARK THEME */
+    color: var(--light-grayish-blue);
+    border-bottom: 1px solid var(--very-dark-grayish-blue-border);
 }
 
-.note div {
-    margin-right: 24px;
+.title-note {
+    margin-left: 16px;
 }
+
+.note:hover{
+    cursor: pointer;
+
+}
+/* ---------------------- */
 
 
 /* NOTE DETAILS SECTION */
@@ -61,9 +182,11 @@ input {
     display: flex;
     justify-content: space-between;
     padding: 16px 0;
-    color: var(--dark-grayish-blue);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
+
+    /* DARK THEME */
+    color: var(--dark-grayish-blue);
 }
 
 .layout-desktop {
@@ -84,9 +207,11 @@ input {
     justify-content: center;
     margin: 16px 0;
     padding: 16px 0;
-    color: var(--dark-grayish-blue);
     font-size: 16px;
     font-weight: 700;
+
+    /* DARK THEME */
+    color: var(--dark-grayish-blue);
 }
 
 .notes-filter div {
@@ -95,14 +220,14 @@ input {
 /* ---------------------- */
 
 
-/* HOVER STYLES */
+/* HOVER STYLES */ /* DARK THEME */
 /* ---------------------- */
  .notes-all:hover,
  .notes-active:hover,
  .notes-completed:hover,
  .clear-completed:hover {
     cursor: pointer;
-    color: var(--very-light-gray);
+    color: var(--light-grayish-blue-hover);
  }
 /* ---------------------- */
 
@@ -113,10 +238,21 @@ input {
     text-align: center;
     margin: 16px 0;
     padding: 16px;
-    color: var(--dark-grayish-blue);
     font-size: 14px;
+
+    /* DARK THEME */
+    color: var(--dark-grayish-blue);
 }
 /* ---------------------- */
+
+
+
+.container {
+    border-radius: 4px;
+     /* DARK THEME */
+    background-color: var(--very-dark-desaturated-blue);
+
+}
 
 
 /* ATTRIBUTION SECTION */
@@ -125,6 +261,8 @@ input {
     margin-top: 120px;
     font-size: 11px; 
     text-align: center; 
+
+    /* DARK THEME */
     color: var(--dark-grayish-blue);
 }
 .attribution a { 

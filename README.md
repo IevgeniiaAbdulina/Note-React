@@ -69,6 +69,14 @@ Using CSS variables:
   background-color: var(--dark-grayish-blue)
 }
 ```
+Gradient border:
+```css
+.uncompleted:hover::before {
+  border: 2px solid;
+  border-image-slice: 1;
+  border-image-source: var(--primary-check-background);
+}
+```
 
 ### Continued development
 

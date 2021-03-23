@@ -1,9 +1,14 @@
 const Note = () => {
     return ( 
         <div className="note">
-            <div className="mark">-</div>
-            <div className="title-note">Title of single note</div>
-            <div className="delete-note">X</div>
+            <div className="wrapper">
+                <div 
+                    className="mark uncompleted"
+                    // className="mark completed"
+                ></div>
+                <div className="title-note">10 minutes meditation</div>
+            </div>
+            <div className="delete-note"></div>
         </div>
      );
 }
