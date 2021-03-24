@@ -13,8 +13,9 @@ function App() {
       <Header />
       <NewNote />
       <NoteList />
-      {/* <NotesDetails /> */}
-      <NotesFilter />
+      <div className="layout-mobile">
+        <NotesFilter />
+      </div>
       <ReorderNotes />
       <Attribution />
     </>

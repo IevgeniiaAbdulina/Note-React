@@ -35,8 +35,6 @@
 }
 
 
-
-
 * {
     margin: 0;
     padding: 0;
@@ -55,19 +53,32 @@ body {
     background: 
         var(--very-dark-blue ) 
         url(./img/bg-mobile-dark.jpg) 
-        no-repeat 0% 0% / auto auto;
+        no-repeat 50% 0% / auto auto;
 
     /* LIGHT THEME */
+}
+
+.container {
+    border-radius: 4px;
+    
+     /* DARK THEME */
+    background-color: var(--very-dark-desaturated-blue);
+
 }
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
     body {
         max-width: 320px;
     }
+    div.notes-filter {
+        margin: 16px 0;
+        padding: 16px 0;
+    }
     
     div.layout-desktop {
         display: none;
     }
+
 }
 
 @media (width > 375px) {
@@ -76,14 +87,14 @@ body {
         background: 
             var(--very-dark-blue ) 
             url(./img/bg-desktop-dark.jpg) 
-            no-repeat 0% 0% / auto auto;
+            no-repeat 50% 0% / auto auto;
 
         /* LIGHT THEME */
     }
 }
 
 @media (width > 480px) {
-    div.notes-filter {
+    div.layout-mobile {
         display: none;
     }
 }

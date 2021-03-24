@@ -181,6 +181,7 @@ input:focus {
 .notes-details {
     display: flex;
     justify-content: space-between;
+    margin: 0 24px;
     padding: 16px 0;
     font-size: 14px;
     font-weight: 700;
@@ -205,8 +206,6 @@ input:focus {
 .notes-filter {
     display: flex;
     justify-content: center;
-    margin: 16px 0;
-    padding: 16px 0;
     font-size: 16px;
     font-weight: 700;
 
@@ -229,6 +228,10 @@ input:focus {
     cursor: pointer;
     color: var(--light-grayish-blue-hover);
  }
+
+.selected {
+    color: var(--primary-bright-blue);
+}
 /* ---------------------- */
 
 
@@ -244,15 +247,6 @@ input:focus {
     color: var(--dark-grayish-blue);
 }
 /* ---------------------- */
-
-
-
-.container {
-    border-radius: 4px;
-     /* DARK THEME */
-    background-color: var(--very-dark-desaturated-blue);
-
-}
 
 
 /* ATTRIBUTION SECTION */
