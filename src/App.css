@@ -35,6 +35,7 @@ input {
     width: 100%;
     border: none;
     font-family: var(--font-family);
+    caret-color: var(--primary-bright-blue);
 
     /* DARK THEME */
     color: var(--dark-grayish-blue);
@@ -107,6 +108,12 @@ input:focus {
     vertical-align: middle;
     border-radius: 50%;
     background: var(--primary-check-background);
+}
+
+.completed + .title-note {
+    /* DARK THEME */
+    color: var(--dark-grayish-blue);
+    text-decoration: line-through;
 }
 
 .completed::before {
