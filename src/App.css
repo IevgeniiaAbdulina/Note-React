@@ -11,13 +11,27 @@
     color: var(--very-light-gray);
 }
 
-.color-theme::before {
+.color-theme:hover {
+    cursor: pointer;
+}
+
+.dark-mode::before {
     content: '';
     display: inline-block;
     vertical-align: middle;
     width: 20px;
     height: 20px;
     background-image: url(./img/icon-sun.svg);
+    background-size: cover;
+}
+
+.light-mode::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    background-image: url(./img/icon-moon.svg);
     background-size: cover;
 }
 /* -------------------------------------------- */
