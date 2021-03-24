@@ -8,7 +8,7 @@ const Note = () => {
                 ></div>
                 <div className="title-note">10 minutes meditation</div>
             </div>
-            <div className="delete-note"></div>
+            <div className="btn-delete"></div>
         </div>
      );
 }

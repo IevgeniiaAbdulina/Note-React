@@ -1,10 +1,10 @@
 /* HEADER SECTION */
-/* ---------------------- */
+/* -------------------------------------------- */
 .header {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    margin: 24px 0;
+    margin-top: 24px;
     padding: 16px 0;
 
     /* DARK THEME */
@@ -20,15 +20,15 @@
     background-image: url(./img/icon-sun.svg);
     background-size: cover;
 }
-/* ---------------------- */
+/* -------------------------------------------- */
+
 
 
 /* NEW NOTE SECTION */
-/* ---------------------- */
+/* -------------------------------------------- */
 .new-note {
-    margin: 16px 0;
+    margin-bottom: 16px;
 }
-
 
 input {
     padding: 16px 60px;
@@ -57,11 +57,12 @@ input:focus {
     border: 2px solid var(--very-dark-grayish-blue-border);
     background: var(--very-dark-desaturated-blue);
 }
-/* ---------------------- */
+/* -------------------------------------------- */
+
+
 
 /* MARK NOTES as COMPLETED and UNCOMPLETED */
-/* ---------------------- */
-
+/* -------------------------------------------- */
 .mark {
     width: 20px;
     height: 20px;
@@ -69,7 +70,6 @@ input:focus {
     vertical-align: middle;
     border-radius: 50%;
 } 
-
 
 .uncompleted:hover::before{
     content: '';
@@ -121,38 +121,30 @@ input:focus {
     background-image: url(./img/icon-check.svg);
     background-size: cover;
 }
-/* ---------------------- */
+/* -------------------------------------------- */
+
+
 
 /* DELETE BUTTON */
-/* ---------------------- */
-.wrapper {
-    display: flex;
-    align-items: center;
-}
+/* -------------------------------------------- */
 
-/* .delete-note {
-    width: 16px;
-    height: 16px;
-    background-image: url(./img/icon-cross.svg);
-    background-size: cover;
-} */
 
-.delete-note {
+.btn-delete {
     display: none;
 }
-
-.note:hover + .delete-note {
+.note:hover .btn-delete{
     display: block;
     width: 16px;
     height: 16px;
     background-image: url(./img/icon-cross.svg);
     background-size: cover;
 }
-/* ---------------------- */
+/* -------------------------------------------- */
+
 
 
 /* NOTE LIST SECTION */
-/* ---------------------- */
+/* -------------------------------------------- */
 .note {
     display: flex;
     justify-content: space-between;
@@ -165,6 +157,11 @@ input:focus {
     border-bottom: 1px solid var(--very-dark-grayish-blue-border);
 }
 
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+
 .title-note {
     margin-left: 16px;
 }
@@ -173,11 +170,12 @@ input:focus {
     cursor: pointer;
 
 }
-/* ---------------------- */
+/* -------------------------------------------- */
+
 
 
 /* NOTE DETAILS SECTION */
-/* ---------------------- */
+/* -------------------------------------------- */
 .notes-details {
     display: flex;
     justify-content: space-between;
@@ -198,11 +196,12 @@ input:focus {
 .layout-desktop div {
     margin: 0 8px;
 }
-/* ---------------------- */
+/* -------------------------------------------- */
+
 
 
 /* NOTES FILTER SECTION */
-/* ---------------------- */
+/* -------------------------------------------- */
 .notes-filter {
     display: flex;
     justify-content: center;
@@ -216,11 +215,11 @@ input:focus {
 .notes-filter div {
     margin: 0 8px;
 }
-/* ---------------------- */
+/* -------------------------------------------- */
 
 
 /* HOVER STYLES */ /* DARK THEME */
-/* ---------------------- */
+/* -------------------------------------------- */
  .notes-all:hover,
  .notes-active:hover,
  .notes-completed:hover,
@@ -232,11 +231,11 @@ input:focus {
 .selected {
     color: var(--primary-bright-blue);
 }
-/* ---------------------- */
+/* -------------------------------------------- */
 
 
 /* REORDER NOTES SECTION */
-/* ---------------------- */
+/* -------------------------------------------- */
 .reorder-notes {
     text-align: center;
     margin: 16px 0;
@@ -246,11 +245,11 @@ input:focus {
     /* DARK THEME */
     color: var(--dark-grayish-blue);
 }
-/* ---------------------- */
+/* -------------------------------------------- */
 
 
 /* ATTRIBUTION SECTION */
-/* ---------------------- */
+/* -------------------------------------------- */
 .attribution { 
     margin-top: 120px;
     font-size: 11px; 
@@ -262,4 +261,4 @@ input:focus {
 .attribution a { 
     color: var(--primary-bright-blue); 
 }
-/* ---------------------- */
+/* -------------------------------------------- */
