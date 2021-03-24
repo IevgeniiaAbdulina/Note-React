@@ -1,4 +1,4 @@
-const Note = () => {
+const Note = ({ note }) => {
     return ( 
         <div className="note">
             <div className="wrapper">
@@ -6,7 +6,7 @@ const Note = () => {
                     className="mark uncompleted"
                     // className="mark completed"
                 ></div>
-                <div className="title-note">10 minutes meditation</div>
+                <div className="title-note">{note.title}</div>
             </div>
             <div className="btn-delete"></div>
         </div>
