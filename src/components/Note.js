@@ -1,5 +1,5 @@
 
-const Note = ({ note, completeHandler }) => {
+const Note = ({ note, completeHandler, deleteHandler }) => {
     
     return ( 
         <div className="note">
@@ -9,7 +9,7 @@ const Note = ({ note, completeHandler }) => {
                 ></div>
                 <div className="title-note">{note.title}</div>
             </div>
-            <div className="btn-delete"></div>
+            <div onClick={deleteHandler} className="btn-delete"></div>
         </div>
      );
 }

@@ -38,6 +38,10 @@ const NoteList = () => {
         }))
     }
 
+    const deleteHandler = (note) => {
+        setNotes(notes.filter(item => item.id !== note.id))
+    }
+
     return ( 
         <>
             <NewNote 
@@ -50,6 +54,7 @@ const NoteList = () => {
                     <Note 
                         note={note} 
                         completeHandler={() => completeHandler(note)} 
+                        deleteHandler={() => deleteHandler(note)}
                         key={note.id} 
                     />)
                 }
