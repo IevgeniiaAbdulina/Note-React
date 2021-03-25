@@ -20,11 +20,22 @@ const NoteList = () => {
             {
                 title: newNote,
                 completed: false,
-                id: Math.random() * 1000
+                id: Math.floor( Math.random() * 1000)
             }
         ])
         setNewNote('');
-        console.log('[NewNote] handleSubmit, note: ', newNote)
+    }
+
+    const completeHandler = (note) => {
+        setNotes(notes.map(item => {
+            if(item.id === note.id) {
+                return {
+                    ...item,
+                    completed: !item.completed
+                }
+            }
+            return item;
+        }))
     }
 
     return ( 
@@ -35,7 +46,13 @@ const NoteList = () => {
                 newNote={newNote}
             />
             <div className="note-list container">
-                {notes.map(note => <Note note={note} />)}
+                {notes.map(note => 
+                    <Note 
+                        note={note} 
+                        completeHandler={() => completeHandler(note)} 
+                        key={note.id} 
+                    />)
+                }
                 <NotesDetails />
             </div>
             <div className="layout-mobile">

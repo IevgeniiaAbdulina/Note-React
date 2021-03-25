@@ -1,10 +1,11 @@
-const Note = ({ note }) => {
+
+const Note = ({ note, completeHandler }) => {
+    
     return ( 
         <div className="note">
             <div className="wrapper">
-                <div 
-                    className="mark uncompleted"
-                    // className="mark completed"
+                <div onClick={completeHandler}
+                    className={`mark ${!note.completed ? 'uncompleted' : 'completed'}`}
                 ></div>
                 <div className="title-note">{note.title}</div>
             </div>
