@@ -9,10 +9,28 @@ const NoteList = () => {
     const [newNote, setNewNote] = useState('');
     const [notes, setNotes] = useState([]);
     const [notesList, setNotesList] = useState([]);
+    const [windowWidth, setWindowWidth] = useState(0);
+    // const [windowHeight, setWindowHeight] = useState(0);
 
     useEffect(() => {
         setNotesList(notes);
-    }, [notes])
+    }, [notes]);
+
+    useEffect(() => {
+        updateScreenSize();
+        window.addEventListener('resize', updateScreenSize);
+        return () => {
+            window.removeEventListener('resize', updateScreenSize);
+        }
+    }, [windowWidth]);
+
+    const updateScreenSize = () => {
+        let windowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
+        // let windowHeight = typeof window !== 'undefined' ? window.innerHeight : 0;
+
+        setWindowWidth(windowWidth);
+        // setWindowHeight(windowHeight);
+    }
 
     const handleChange = (e) => {
         setNewNote(e.target.value);
@@ -73,11 +91,21 @@ const NoteList = () => {
                         key={note.id} 
                     />)
                 }
-                <NotesDetails filterHandler={filterHandler} />
+                <div className="notes-details">
+                    <div className="note-left">Note left</div>
+                    {windowWidth > 480 && (
+                        <div className="layout-desktop">
+                            <NotesFilter getFilter={filterHandler} />
+                        </div>
+                    )}
+                    <div className="clear-completed">Clear completed</div>
+                </div>
             </div>
-            <div className="layout-mobile">
-                <NotesFilter />
-            </div>
+            {windowWidth < 480 && (
+                <div className="layout-mobile">
+                    <NotesFilter getFilter={filterHandler} />
+                </div>
+            )}
         </>
      );
 }

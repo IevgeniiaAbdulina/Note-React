@@ -75,9 +75,9 @@ body {
         padding: 16px 0;
     }
     
-    div.layout-desktop {
+    /* div.layout-desktop {
         display: none;
-    }
+    } */
 
 }
 
@@ -93,11 +93,11 @@ body {
     }
 }
 
-@media (width > 480px) {
+/* @media (width > 480px) {
     div.layout-mobile {
         display: none;
     }
-}
+} */
 
 @media (width >= 720px) {
     .layout-desktop {
