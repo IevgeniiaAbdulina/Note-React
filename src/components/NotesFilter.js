@@ -1,10 +1,11 @@
 import {useState} from "react";
 
-const NotesFilter = () => {
+const NotesFilter = ({getFilter}) => {
     const [selectedItem, setSelectedItem] = useState('all');
 
     const filterNotes = (selected) => {
         setSelectedItem(selected);
+        getFilter(selected);
     }
     
     return ( 

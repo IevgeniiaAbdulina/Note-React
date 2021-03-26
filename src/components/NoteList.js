@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NewNote from "./NewNote";
 import Note from "./Note"
 import NotesDetails from "./NotesDetails";
@@ -8,6 +8,11 @@ import NotesFilter from "./NotesFilter";
 const NoteList = () => {
     const [newNote, setNewNote] = useState('');
     const [notes, setNotes] = useState([]);
+    const [notesList, setNotesList] = useState([]);
+
+    useEffect(() => {
+        setNotesList(notes);
+    }, [notes])
 
     const handleChange = (e) => {
         setNewNote(e.target.value);
@@ -42,6 +47,16 @@ const NoteList = () => {
         setNotes(notes.filter(item => item.id !== note.id))
     }
 
+    const filterHandler = (selected) => {
+        if(selected === 'active') {
+            setNotesList([...notes.filter(item => item.completed === false)]);
+        } else if(selected === 'completed') {
+            setNotesList([...notes.filter(item => item.completed === true)]);
+        } else if(selected === 'all') {
+            setNotesList([...notes]);
+        }
+    }
+
     return ( 
         <>
             <NewNote 
@@ -50,7 +65,7 @@ const NoteList = () => {
                 newNote={newNote}
             />
             <div className="note-list container">
-                {notes.map(note => 
+                {notesList.map(note => 
                     <Note 
                         note={note} 
                         completeHandler={() => completeHandler(note)} 
@@ -58,7 +73,7 @@ const NoteList = () => {
                         key={note.id} 
                     />)
                 }
-                <NotesDetails />
+                <NotesDetails filterHandler={filterHandler} />
             </div>
             <div className="layout-mobile">
                 <NotesFilter />
