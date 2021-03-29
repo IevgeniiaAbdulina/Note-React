@@ -79,6 +79,10 @@ const NoteList = () => {
         setNotesLeft(notesList.filter(item => item.completed === false).length);
     }
 
+    const clearCompletedNotes = () => {
+        setNotes(notes.filter(item => item.completed === false))
+    }
+
     return ( 
         <>
             <NewNote 
@@ -102,7 +106,7 @@ const NoteList = () => {
                             <NotesFilter getFilter={filterHandler} />
                         </div>
                     )}
-                    <div className="clear-completed">Clear completed</div>
+                    <div className="clear-completed" onClick={clearCompletedNotes}>Clear completed</div>
                 </div>
             </div>
             {windowWidth < 480 && (
