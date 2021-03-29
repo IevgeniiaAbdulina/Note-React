@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import NewNote from "./NewNote";
 import Note from "./Note"
-import NotesDetails from "./NotesDetails";
 import NotesFilter from "./NotesFilter";
 
 
@@ -10,7 +9,7 @@ const NoteList = () => {
     const [notes, setNotes] = useState([]);
     const [notesList, setNotesList] = useState([]);
     const [windowWidth, setWindowWidth] = useState(0);
-    // const [windowHeight, setWindowHeight] = useState(0);
+    const [notesLeft, setNotesLeft] = useState(0);
 
     useEffect(() => {
         setNotesList(notes);
@@ -24,12 +23,13 @@ const NoteList = () => {
         }
     }, [windowWidth]);
 
+    useEffect(() => {
+        getNotesLeft()
+    }, [notesList])
+
     const updateScreenSize = () => {
         let windowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
-        // let windowHeight = typeof window !== 'undefined' ? window.innerHeight : 0;
-
         setWindowWidth(windowWidth);
-        // setWindowHeight(windowHeight);
     }
 
     const handleChange = (e) => {
@@ -75,6 +75,10 @@ const NoteList = () => {
         }
     }
 
+    const getNotesLeft = () => {
+        setNotesLeft(notesList.filter(item => item.completed === false).length);
+    }
+
     return ( 
         <>
             <NewNote 
@@ -92,7 +96,7 @@ const NoteList = () => {
                     />)
                 }
                 <div className="notes-details">
-                    <div className="note-left">Note left</div>
+                    <div className="note-left">{notesLeft} Note left</div>
                     {windowWidth > 480 && (
                         <div className="layout-desktop">
                             <NotesFilter getFilter={filterHandler} />
