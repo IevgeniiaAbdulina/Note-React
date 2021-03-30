@@ -6,29 +6,25 @@
     justify-content: space-between;
     margin-top: 24px;
     padding: 16px 0;
-
-    /* DARK THEME */
-    color: var(--very-light-gray);
+    color: var(--light-theme-very-light-gray);
 }
 
 .color-theme:hover {
     cursor: pointer;
 }
 
-.dark-mode::before {
+.color-theme.dark-mode::before {
     content: '';
     display: inline-block;
-    vertical-align: middle;
     width: 20px;
     height: 20px;
     background-image: url(./img/icon-sun.svg);
     background-size: cover;
 }
 
-.light-mode::before {
+.color-theme.light-mode::before {
     content: '';
     display: inline-block;
-    vertical-align: middle;
     width: 20px;
     height: 20px;
     background-image: url(./img/icon-moon.svg);
@@ -50,8 +46,6 @@ input {
     border: none;
     font-family: var(--font-family);
     caret-color: var(--primary-bright-blue);
-
-    /* DARK THEME */
     color: var(--dark-grayish-blue);
 }
 
@@ -71,6 +65,11 @@ input:focus {
     border-radius: 50%;
     border: 2px solid var(--very-dark-grayish-blue-border);
     background: var(--very-dark-desaturated-blue);
+}
+
+.new-note.light-mode::before{
+    border: 2px solid var(--light-theme-light-grayish-blue);
+    background: var(--light-theme-very-light-gray);
 }
 /* -------------------------------------------- */
 
@@ -106,12 +105,23 @@ input:focus {
     position: relative;
     top: -148%;
     left: -4%;
-    background-color: var(--very-dark-desaturated-blue);
     border-radius: 50%;
 }
 
-.uncompleted {
-    /* DARK THEME */
+.uncompleted.light-mode:hover::after {
+    background: var(--light-theme-very-light-gray);
+}
+
+.uncompleted.dark-mode:hover::after {
+    background-color: var(--very-dark-desaturated-blue);
+}
+
+.uncompleted.light-mode {
+    border: 2px solid var(--light-theme-light-grayish-blue);
+    background: var(--light-theme-very-light-gray);
+}
+
+.uncompleted.dark-mode {
     border: 2px solid var(--very-dark-grayish-blue-border);
 }
 
@@ -124,8 +134,12 @@ input:focus {
     background: var(--primary-check-background);
 }
 
-.completed + .title-note {
-    /* DARK THEME */
+.completed + .title-note.light-mode {
+    color: var(--light-theme-light-grayish-blue);
+    text-decoration: line-through;
+}
+
+.completed + .title-note.dark-mode {
     color: var(--dark-grayish-blue);
     text-decoration: line-through;
 }
@@ -148,8 +162,6 @@ input:focus {
 
 /* DELETE BUTTON */
 /* -------------------------------------------- */
-
-
 .btn-delete {
     display: none;
 }
@@ -172,8 +184,14 @@ input:focus {
     align-items: center;
     padding: 16px 24px;
     font-size: 14px;
+}
 
-    /* DARK THEME */
+.note.light-mode {
+    color: var( --light-theme-very-dark-grayish-blue);
+    border-bottom: 1px solid var(--light-theme-light-grayish-blue);
+}
+
+.note.dark-mode {
     color: var(--light-grayish-blue);
     border-bottom: 1px solid var(--very-dark-grayish-blue-border);
 }
@@ -202,13 +220,17 @@ input:focus {
     justify-content: space-between;
     margin: 0 24px;
     padding: 16px 0;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
-
-    /* DARK THEME */
-    color: var(--dark-grayish-blue);
 }
 
+.notes-details.light-mode {
+    color: var(--light-theme-dark-grayish-blue);
+}
+
+.notes-details.dark-mode {
+    color: var(--dark-grayish-blue);
+}
 .layout-desktop {
     display: flex;
     justify-content: center;
@@ -228,8 +250,13 @@ input:focus {
     justify-content: center;
     font-size: 16px;
     font-weight: 700;
+}
 
-    /* DARK THEME */
+.notes-filter.light-mode {
+    color: var(--light-theme-dark-grayish-blue);
+}
+
+.notes-filter.dark-mode {
     color: var(--dark-grayish-blue);
 }
 
@@ -241,10 +268,18 @@ input:focus {
 
 /* HOVER STYLES */ /* DARK THEME */
 /* -------------------------------------------- */
- .notes-all:hover,
- .notes-active:hover,
- .notes-completed:hover,
- .clear-completed:hover {
+.notes-all.light-mode:hover,
+ .notes-active.light-mode:hover,
+ .notes-completed.light-mode:hover,
+ .clear-completed.light-mode:hover {
+    cursor: pointer;
+    color: var(--light-theme-very-dark-grayish-blue);
+ }
+
+ .notes-all.dark-mode:hover,
+ .notes-active.dark-mode:hover,
+ .notes-completed.dark-mode:hover,
+ .clear-completed.dark-mode:hover {
     cursor: pointer;
     color: var(--light-grayish-blue-hover);
  }
@@ -262,8 +297,6 @@ input:focus {
     margin: 16px 0;
     padding: 16px;
     font-size: 14px;
-
-    /* DARK THEME */
     color: var(--dark-grayish-blue);
 }
 /* -------------------------------------------- */
@@ -275,8 +308,6 @@ input:focus {
     margin-top: 120px;
     font-size: 11px; 
     text-align: center; 
-
-    /* DARK THEME */
     color: var(--dark-grayish-blue);
 }
 .attribution a { 

@@ -4,7 +4,7 @@ import Note from "./Note"
 import NotesFilter from "./NotesFilter";
 
 
-const NoteList = () => {
+const NoteList = ({colorMode}) => {
     const [newNote, setNewNote] = useState('');
     const [notes, setNotes] = useState([]);
     const [notesList, setNotesList] = useState([]);
@@ -89,29 +89,37 @@ const NoteList = () => {
                 handleChange={handleChange} 
                 handleSubmit= {handleSubmit}
                 newNote={newNote}
+                colorMode={colorMode}
             />
-            <div className="note-list container">
+            <div className={`note-list container ${colorMode}`}>
                 {notesList.map(note => 
                     <Note 
                         note={note} 
                         completeHandler={() => completeHandler(note)} 
                         deleteHandler={() => deleteHandler(note)}
                         key={note.id} 
+                        colorMode={colorMode}
                     />)
                 }
-                <div className="notes-details">
+                <div className={`notes-details ${colorMode}`}>
                     <div className="note-left">{notesLeft} Note left</div>
                     {windowWidth > 480 && (
                         <div className="layout-desktop">
-                            <NotesFilter getFilter={filterHandler} />
+                            <NotesFilter 
+                                getFilter={filterHandler}
+                                colorMode={colorMode}
+                             />
                         </div>
                     )}
-                    <div className="clear-completed" onClick={clearCompletedNotes}>Clear completed</div>
+                    <div className={`clear-completed ${colorMode}`} onClick={clearCompletedNotes}>Clear completed</div>
                 </div>
             </div>
             {windowWidth < 480 && (
                 <div className="layout-mobile">
-                    <NotesFilter getFilter={filterHandler} />
+                    <NotesFilter 
+                        getFilter={filterHandler}
+                        colorMode={colorMode}
+                     />
                 </div>
             )}
         </>

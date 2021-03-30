@@ -1,10 +1,10 @@
 
-const NewNote = ({ handleChange, handleSubmit, newNote }) => {
+const NewNote = ({ handleChange, handleSubmit, newNote, colorMode }) => {
     return ( 
-        <div className="new-note">
+        <div className={`new-note ${colorMode}`}>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <input 
-                    className='container'
+                    className={`container ${colorMode}`}
                     type="text" 
                     placeholder='Create a new note...'
                     value={newNote}
