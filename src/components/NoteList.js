@@ -11,58 +11,11 @@ const NoteList = ({colorMode}) => {
     const [windowWidth, setWindowWidth] = useState(0);
     const [notesLeft, setNotesLeft] = useState(0);
 
-    // const dropArea = document.getElementById('drop-area');
-    // const dropItem = document.getElementById('drop-item');
-
     useEffect(() => {
         setNotesList(notes);
     }, [notes]);
 
     // Drag and Drop Start  _______________________________
-    // useEffect(() => {
-    //     if(notes.length < 1) {
-    //         return
-    //     } else {
-    //         dropArea.addEventListener('dragstart', (event) => {
-    //             event.target.style.opacity = '0.4';
-    //             // event.dataTransfer.effectAllowed = 'move';
-    //             // event.dataTransfer.setData('text/html', dropItem.innerHTML);
-    //            console.log('event: ', event.type)
-
-    //         });
-
-    //         dropArea.addEventListener('dragover', (event) => {
-    //             event.preventDefault();
-    //             event.target.classList.add('over');
-    //             console.log('event: ', event.type)
-    //         });
-
-            
-    //         dropArea.addEventListener('dragleave', (event) => {
-    //             event.target.classList.remove('over');
-    //             console.log('event: ', event.type)
-    //         });
-        
-    //         dropArea.addEventListener('dragend', (event) => {
-    //             event.target.style.opacity = '1';
-    //             console.log('event: ', event.type)
-    //         });
-
-    //         dropArea.addEventListener('drop', (event) => {
-    //            console.log('event: ', event.type)
-    //         });
-
-    //         const handleDrop = (e) => {
-    //             e.stopPropagation();
-    //             e.preventDefault();
-    //             if(!dropItem) {
-    //                 return
-    //             } else {
-    //                return dropItem.innerHTML = e.dataTransfer.getData('text/html');
-    //             }
-    //         }
-    //     }
-    // }, [notes, dropArea, dropItem]);
 
     useEffect(() => {
        if(notes.length < 1) {
@@ -142,6 +95,9 @@ const NoteList = ({colorMode}) => {
         }
     }
     //  DnD End ____________________________________________
+    // ///////////////////////////////////////////////////////////////////////////////////
+
+    // ///////////////////////////////////////////////////////////////////////////////////
 
     useEffect(() => {
         updateScreenSize();

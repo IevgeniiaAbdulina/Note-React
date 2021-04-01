@@ -88,6 +88,16 @@ body.dark-mode {
         margin: 16px 0;
         padding: 16px 0;
     }
+
+    .btn-delete {
+        display: block;
+    }
+}
+
+@media (width > 480px) {
+    .btn-delete {
+        display: none;
+    }
 }
 
 @media (width > 375px) {

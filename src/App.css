@@ -163,14 +163,15 @@ input:focus {
 /* DELETE BUTTON */
 /* -------------------------------------------- */
 .btn-delete {
-    display: none;
-}
-.note:hover .btn-delete{
-    display: block;
+    /* display: none; */
     width: 16px;
     height: 16px;
     background-image: url(./img/icon-cross.svg);
     background-size: cover;
+}
+
+.note:hover .btn-delete{
+    display: block;
 }
 /* -------------------------------------------- */
 
