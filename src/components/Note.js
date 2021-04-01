@@ -1,5 +1,16 @@
 
-const Note = ({ note, index, completeHandler, deleteHandler, colorMode, onDragStart, onDragOver, onDrop, onDragLeave, classNameDnD }) => {
+const Note = ({ 
+        note, 
+        index, 
+        completeHandler, 
+        deleteHandler, 
+        colorMode, 
+        onDragStart, 
+        onDragOver, 
+        onDrop, 
+        onDragLeave, 
+        classNameDnD 
+    }) => {
     
     return ( 
         <div 

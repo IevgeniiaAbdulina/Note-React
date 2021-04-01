@@ -96,40 +96,17 @@ const NoteList = ({colorMode}) => {
     } 
 
     const DragToReorderList = () => {
-        // We'll use the initialDndState created above
         const [dragAndDrop, setDragAndDrop] = useState(initialDnDState);
 
         const onDragStart = (e) => {
-            // It receives a DragEvent
-            // which inherits properties from
-            // MouseEvent and Event
-            // so we can access the element
-            // through event.currentTarget
-    
-            // Later, we'll save
-            // in a hook variable
-            // the item being dragged
-    
-            console.log('onDragStart');
-    
-            // We'll access the "data-position" attribute
-            // of the current element dragged
             const initialPosition = Number(e.currentTarget.dataset.position);
-            console.log('initialPosition', initialPosition)
     
             setDragAndDrop({
-                 // we spread the previous content
-                // of the hook variable
-                // so we don't override the properties 
-                // not being updated
                 ...dragAndDrop, 
-    
-                draggedFrom: initialPosition, // set the draggedFrom position
+                draggedFrom: initialPosition,
                 isDragging: true,
-                originalOrder: notesList // store the current state of "list"
+                originalOrder: notesList
             });
-
-            console.log("dragAndDrop: ", dragAndDrop)
 
             // Note: this is only for Firefox.
             e.dataTransfer.setData("text/html", '');
@@ -137,79 +114,42 @@ const NoteList = ({colorMode}) => {
         }
 
         const onDragOver = (e) => {
-            // It also receives a DragEvent.
-            // Later, we'll read the position
-            // of the item from event.currentTarget
-            // and store the updated list state
-    
-            // We need to prevent the default behavior
-            // of this event, in order for the onDrop
-            // event to fire.
-            // It may sound weird, but the default is
-            // to cancel out the drop.
-    
             e.preventDefault();
-            console.log('onDragOver');
 
-            // Store the content of the original list
-            // in this variable that we'll update
             let newList = dragAndDrop.originalOrder;
-            console.log('newList: ', newList);
 
-            // index of the item being dragged
             const draggedFrom = dragAndDrop.draggedFrom;
-            console.log('draggedFrom: ', draggedFrom);
 
-            // index of the drop area being hovered
             const draggedTo = Number(e.currentTarget.dataset.position);
-            console.log('draggedTo: ', draggedTo);
 
-            // get the element that's at the position of "draggedFrom"
             const itemDragged = newList[draggedFrom];
-            console.log('itemDragged: ', itemDragged);
 
-            // filter out the item being dragged
             const remainingItems = newList.filter((item, index) => index !== draggedFrom);
 
-            // update the list
             newList = [
                 ...remainingItems.slice(0, draggedTo),
                 itemDragged,
                 ...remainingItems.slice(draggedTo)
             ];
 
-            // check if the targets are different
             if(draggedTo !== dragAndDrop.draggedTo) {
                 setDragAndDrop({
                     ...dragAndDrop,
-
-                    // save the updated list state
-                    // we will render this onDrop
                     updatedOrder: newList,
                     draggedTo: draggedTo
                 })
             }
-
         }
     
         const onDrop = (e) => {
-            // Here, we will:
-            // - update the rendered list
-            // - and reset the DnD state
-            console.log('onDrop');
-
-            // we use the updater function
-            // for the "list" hook
             setNotesList(dragAndDrop.updatedOrder);
 
-            // and reset the state of the DnD
             setDragAndDrop({
                 ...dragAndDrop,
                 draggedFrom: null,
                 draggedTo: null,
                 isDragging: false
             })
-    
         }
 
         const onDragLeave = () => {
@@ -254,9 +194,10 @@ const NoteList = ({colorMode}) => {
             </div>
         )
     }
-
     /////////////////////////////////////////////////////////////////////////////////////
 
+
+    
     return ( 
         <>
             <NewNote 
