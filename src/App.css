@@ -188,8 +188,10 @@ input:focus {
     /* cursor: move; */
 }
 
-.drop-item.over {
-    border: dotted salmon;
+.note.drop-area {
+    box-shadow: 
+        0 0 2px var(--primary-bright-blue), 
+        0 0 10px hsl(280, 87%, 65%);
 }
 
 .note.light-mode {
