@@ -23,12 +23,12 @@ function App() {
     }
 
   return (
-    <div className='main'>
+    <>
       <Header toggleColorMode={toggleColorMode} colorMode={colorMode} />
       <NoteList colorMode={colorMode} />
       <ReorderNotes />
       <Attribution />
-    </div>
+    </>
   );
 }
 

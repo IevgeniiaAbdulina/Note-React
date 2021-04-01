@@ -2,7 +2,7 @@
 const Note = ({ note, completeHandler, deleteHandler, colorMode }) => {
     
     return ( 
-        <div className={`note ${colorMode}`}>
+        <div className={`note ${colorMode} drop-item`} draggable='true' id={note.id}>
             <div className="wrapper">
                 <div onClick={completeHandler}
                     className={`mark ${!note.completed ? 'uncompleted' : 'completed'} ${colorMode}`}

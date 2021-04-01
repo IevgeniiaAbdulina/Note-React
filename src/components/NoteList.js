@@ -11,9 +11,137 @@ const NoteList = ({colorMode}) => {
     const [windowWidth, setWindowWidth] = useState(0);
     const [notesLeft, setNotesLeft] = useState(0);
 
+    // const dropArea = document.getElementById('drop-area');
+    // const dropItem = document.getElementById('drop-item');
+
     useEffect(() => {
         setNotesList(notes);
     }, [notes]);
+
+    // Drag and Drop Start  _______________________________
+    // useEffect(() => {
+    //     if(notes.length < 1) {
+    //         return
+    //     } else {
+    //         dropArea.addEventListener('dragstart', (event) => {
+    //             event.target.style.opacity = '0.4';
+    //             // event.dataTransfer.effectAllowed = 'move';
+    //             // event.dataTransfer.setData('text/html', dropItem.innerHTML);
+    //            console.log('event: ', event.type)
+
+    //         });
+
+    //         dropArea.addEventListener('dragover', (event) => {
+    //             event.preventDefault();
+    //             event.target.classList.add('over');
+    //             console.log('event: ', event.type)
+    //         });
+
+            
+    //         dropArea.addEventListener('dragleave', (event) => {
+    //             event.target.classList.remove('over');
+    //             console.log('event: ', event.type)
+    //         });
+        
+    //         dropArea.addEventListener('dragend', (event) => {
+    //             event.target.style.opacity = '1';
+    //             console.log('event: ', event.type)
+    //         });
+
+    //         dropArea.addEventListener('drop', (event) => {
+    //            console.log('event: ', event.type)
+    //         });
+
+    //         const handleDrop = (e) => {
+    //             e.stopPropagation();
+    //             e.preventDefault();
+    //             if(!dropItem) {
+    //                 return
+    //             } else {
+    //                return dropItem.innerHTML = e.dataTransfer.getData('text/html');
+    //             }
+    //         }
+    //     }
+    // }, [notes, dropArea, dropItem]);
+
+    useEffect(() => {
+       if(notes.length < 1) {
+        return
+       } else {
+        dragAndDrop();
+       }
+    }, [notes])
+
+    const dragAndDrop = () => {
+        let dragEl;
+
+        const dragStart = (e) => {
+            console.log('dragEl  ', dragEl)
+            console.log('e.target  ', e.target.id)
+             e.target.style.opacity = '0.4';
+
+             dragEl = e.target;
+             e.dataTransfer.effectAllowed = 'move';
+             e.dataTransfer.setData('text/html', e.target.innerHTML);
+        }
+
+        const dragOver = (e) => {
+            if(e.preventDefault()) {
+                e.preventDefault();
+            }
+            e.dataTransfer.dropEffect = 'move';
+            return false;
+        }
+
+        const dragEnter = (e) => {
+            e.target.classList.add('over');
+        }
+
+        const dragLeave = (e) => {
+            e.target.classList.remove('over');
+        }
+
+        const dragDrop = (e) => {
+            console.log('dragEl  ', dragEl)
+            console.log('e.target  ', e.target.id)
+            if(e.stopPropagation()) {
+                e.stopPropagation();  // stop the browser from redirecting
+            }
+
+            if(dragEl !== e.target) {
+                dragEl.innerHTML = e.target.innerHTML;
+                e.target.innerHTML = e.dataTransfer.getData('text/html');
+            }
+            
+
+            return false;
+        }
+
+        
+        const dragEnd =(e) => {
+            e.target.style.opacity = '1';
+
+            items.forEach((item) => {
+                item.classList.remove('over');
+            })
+        }
+
+        let items = document.querySelectorAll('.drop-area .drop-item');
+        if(items === null) {
+            return
+        } else {
+            items.forEach((item) => {
+                console.log("ITEM: ", item)
+                item.addEventListener('dragstart', dragStart, false);
+                item.addEventListener('dragenter', dragEnter, false);
+                item.addEventListener('dragover', dragOver, false);
+                item.addEventListener('dragleave', dragLeave, false);
+                item.addEventListener('drop', dragDrop, false);
+                item.addEventListener('dragend', dragEnd, false);
+            })
+        }
+    }
+    //  DnD End ____________________________________________
 
     useEffect(() => {
         updateScreenSize();
@@ -25,7 +153,7 @@ const NoteList = ({colorMode}) => {
 
     useEffect(() => {
         getNotesLeft()
-    }, [notesList])
+    }, [notesList, notesLeft])
 
     const updateScreenSize = () => {
         let windowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
@@ -83,6 +211,8 @@ const NoteList = ({colorMode}) => {
         setNotes(notes.filter(item => item.completed === false))
     }
 
+    
+   
     return ( 
         <>
             <NewNote 
@@ -91,15 +221,15 @@ const NoteList = ({colorMode}) => {
                 newNote={newNote}
                 colorMode={colorMode}
             />
-            <div className={`note-list container ${colorMode}`}>
+            <div className={`note-list container ${colorMode} drop-area`}>
                 {notesList.map(note => 
-                    <Note 
-                        note={note} 
-                        completeHandler={() => completeHandler(note)} 
-                        deleteHandler={() => deleteHandler(note)}
-                        key={note.id} 
-                        colorMode={colorMode}
-                    />)
+                        <Note 
+                            note={note} 
+                            completeHandler={() => completeHandler(note)} 
+                            deleteHandler={() => deleteHandler(note)}
+                            key={note.id} 
+                            colorMode={colorMode}
+                        />)
                 }
                 <div className={`notes-details ${colorMode}`}>
                     <div className="note-left">{notesLeft} Note left</div>
