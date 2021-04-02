@@ -34,15 +34,14 @@ Users should be able to:
 ### Screenshot
 
 <img src="/src/img/desktop-dark-screenshot.png" width="600">
-<br>
 <img src="/src/img/desktop-light-screenshot.png" width="600">
-<br>
-<img src="/src/img/mobile-dark-screenshot.png" width="300"> <img src="/src/img/mobile-light-screenshot.png" width="300">
+<img src="/src/img/mobile-dark-screenshot.png" width="300">
+<img src="/src/img/mobile-light-screenshot.png" width="300">
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/todo-react-application-Ho3-KSNnA](https://www.frontendmentor.io/solutions/todo-react-application-Ho3-KSNnA)
+- Live Site URL: Deploy with GitHub Pages [https://ievgeniiaabdulina.github.io/Note-React/](https://ievgeniiaabdulina.github.io/Note-React/)
 ## My process
 
 ### Built with
