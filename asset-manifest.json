@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/github.io/Note-React/static/css/main.0abefcfa.chunk.css",
-    "main.js": "/github.io/Note-React/static/js/main.9ea4f803.chunk.js",
-    "main.js.map": "/github.io/Note-React/static/js/main.9ea4f803.chunk.js.map",
-    "runtime-main.js": "/github.io/Note-React/static/js/runtime-main.735efb74.js",
-    "runtime-main.js.map": "/github.io/Note-React/static/js/runtime-main.735efb74.js.map",
-    "static/js/2.fd835053.chunk.js": "/github.io/Note-React/static/js/2.fd835053.chunk.js",
-    "static/js/2.fd835053.chunk.js.map": "/github.io/Note-React/static/js/2.fd835053.chunk.js.map",
-    "index.html": "/github.io/Note-React/index.html",
-    "static/css/main.0abefcfa.chunk.css.map": "/github.io/Note-React/static/css/main.0abefcfa.chunk.css.map",
-    "static/js/2.fd835053.chunk.js.LICENSE.txt": "/github.io/Note-React/static/js/2.fd835053.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/github.io/Note-React/static/media/bg-desktop-light.3508d620.jpg",
-    "static/media/App.css": "/github.io/Note-React/static/media/icon-sun.910b1f9a.svg"
+    "main.css": "/Note-React/static/css/main.2b631601.chunk.css",
+    "main.js": "/Note-React/static/js/main.9ea4f803.chunk.js",
+    "main.js.map": "/Note-React/static/js/main.9ea4f803.chunk.js.map",
+    "runtime-main.js": "/Note-React/static/js/runtime-main.3e86b3b1.js",
+    "runtime-main.js.map": "/Note-React/static/js/runtime-main.3e86b3b1.js.map",
+    "static/js/2.fd835053.chunk.js": "/Note-React/static/js/2.fd835053.chunk.js",
+    "static/js/2.fd835053.chunk.js.map": "/Note-React/static/js/2.fd835053.chunk.js.map",
+    "index.html": "/Note-React/index.html",
+    "static/css/main.2b631601.chunk.css.map": "/Note-React/static/css/main.2b631601.chunk.css.map",
+    "static/js/2.fd835053.chunk.js.LICENSE.txt": "/Note-React/static/js/2.fd835053.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/Note-React/static/media/bg-desktop-light.3508d620.jpg",
+    "static/media/App.css": "/Note-React/static/media/icon-sun.910b1f9a.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.735efb74.js",
+    "static/js/runtime-main.3e86b3b1.js",
     "static/js/2.fd835053.chunk.js",
-    "static/css/main.0abefcfa.chunk.css",
+    "static/css/main.2b631601.chunk.css",
     "static/js/main.9ea4f803.chunk.js"
   ]
 }
