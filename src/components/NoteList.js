@@ -24,8 +24,11 @@ const NoteList = ({colorMode}) => {
     }, [windowWidth]);
 
     useEffect(() => {
+        const getNotesLeft = () => {
+            setNotesLeft(notesList.filter(item => item.completed === false).length);
+        }
         getNotesLeft();
-    }, [notesList, notesLeft])
+    }, [notesList])
 
     const updateScreenSize = () => {
         let windowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
@@ -73,10 +76,6 @@ const NoteList = ({colorMode}) => {
         } else if(selected === 'all') {
             setNotesList([...notes]);
         }
-    }
-
-    const getNotesLeft = () => {
-        setNotesLeft(notesList.filter(item => item.completed === false).length);
     }
 
     const clearCompletedNotes = () => {
