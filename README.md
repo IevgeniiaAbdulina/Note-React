@@ -37,9 +37,7 @@ Users should be able to:
 <br>
 <img src="/src/img/desktop-light-screenshot.png" width="600">
 <br>
-<img src="/src/img/mobile-dark-screenshot.png" width="600">
-<br>
-<img src="/src/img/mobile-light-screenshot.png" width="600">
+<img src="/src/img/mobile-dark-screenshot.png" width="300"> <img src="/src/img/mobile-light-screenshot.png" width="300">
 
 ### Links
 
