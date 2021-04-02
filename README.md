@@ -33,13 +33,18 @@ Users should be able to:
 
 ### Screenshot
 
-<!-- ![](./screenshot.jpg) -->
+<img src="/src/img/desktop-dark-screenshot.png" width="600">
+<br>
+<img src="/src/img/desktop-light-screenshot.png" width="600">
+<br>
+<img src="/src/img/mobile-dark-screenshot.png" width="600">
+<br>
+<img src="/src/img/mobile-light-screenshot.png" width="600">
 
 ### Links
 
-<!-- - Solution URL: [Add solution URL here](https://your-solution-url.com) -->
-<!-- - Live Site URL: [Add live site URL here](https://your-live-site-url.com) -->
-
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 ## My process
 
 ### Built with
@@ -48,16 +53,8 @@ Users should be able to:
 - Flexbox
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-<!-- - [Next.js](https://nextjs.org/) - React framework -->
-<!-- - [Styled Components](https://styled-components.com/) - For styles -->
 
 ### What I learned
-
-<!-- ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-``` -->
 
 Using CSS variables:
 ```css
@@ -69,96 +66,42 @@ Using CSS variables:
   background-color: var(--dark-grayish-blue)
 }
 ```
-Gradient border:
+
+CSS rounded corners with gradient border :
 ```css
-.uncompleted:hover::before {
-  border: 2px solid;
-  border-image-slice: 1;
-  border-image-source: var(--primary-check-background);
+.uncompleted:hover::before{
+    content: '';
+    width: 125%;
+    height: 125%;
+    display: inline-block;
+    position: relative;
+    top: -10%;
+    left: -12%;
+    background-image: var(--primary-check-background);
+    border-radius: 50%;
+}
+
+.uncompleted:hover::after{
+    content: '';
+    width: 110%;
+    height: 110%;
+    display: inline-block;
+    position: relative;
+    top: -148%;
+    left: -4%;
+    border-radius: 50%;
 }
 ```
 
 ### Continued development
 
-<!-- Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect. -->
+Drag and Drop to reorder items on the list.
 
 ### Useful resources
 
-<!-- - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward. -->
+[Example resource Creating a Drag and Drop List with React Hooks](https://dev.to/florantara/creating-a-drag-and-drop-list-with-react-hooks-4c0i) - This source is very helped me to understand the principles of DnD with React Hooks.
 
 ## Author
 
 - Website - [Ievgeniia Abdulina](https://codepen.io/ievgeniiaabdulina/full/VweMyLM)
 - Frontend Mentor - [@IevgeniiaAbdulina](https://www.frontendmentor.io/profile/IevgeniiaAbdulina)
-
-
-
-
-
-
-
-
-
-<!-- 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
